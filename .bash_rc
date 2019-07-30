@@ -1,0 +1,16 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+#PS1='[\u@\h \W]\$ '
+#PS1="┌[\[\e[35m\t\e[39m]\]──[\[\e[96m\\u\e[39m]\]──[\[\e[36m\h\e[39m]\]──[\[\e[92m\\w\e[39m]\]\n└[\[\e[91m\$\]\e[39m] "
+PS1="\[[\e[34m\]\w\[\e[39m]\] \[\e[92m\]\$\[\e[39m\] "
+alias flacto320="for i in *.flac ; do ffmpeg -i \"$i\" -acodec libmp3lame \"$(basename \"${i/.flac}\").mp3\" -ab 320k; done"
+
+# should've bben here by default
+alias ll="ls -l --color"
+#mpd ~/.config/mpd/mpd.conf
